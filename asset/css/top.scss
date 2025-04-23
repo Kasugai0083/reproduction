@@ -70,7 +70,7 @@ $base-width:375px * 0.9;
 .top-chosen{
     justify-content: space-between;
     align-items: end;
-    gap: 2em;
+    gap: 1.5em;
     font-weight: 900;
 
 
@@ -81,7 +81,7 @@ $base-width:375px * 0.9;
     }
     &__message{
         line-height: 1.4;
-        font-size: 0.95rem;
+        font-size: 11px;
 
         #name{
             font-size: 24px;

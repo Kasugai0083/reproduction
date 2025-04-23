@@ -59,7 +59,7 @@
 .top-chosen {
   justify-content: space-between;
   align-items: end;
-  gap: 2em;
+  gap: 1.5em;
   font-weight: 900;
 }
 .top-chosen__traveler {
@@ -69,7 +69,7 @@
 }
 .top-chosen__message {
   line-height: 1.4;
-  font-size: 0.95rem;
+  font-size: 11px;
 }
 .top-chosen__message #name {
   font-size: 24px;

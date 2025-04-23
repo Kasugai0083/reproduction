@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* ■■■■■■■■■■タブ切り替え■■■■■■■■■■ */
+/* ------------------  -------------------- */
+.tabnav{
+	width: 100%;
+	display: flex;
+}
+.tabnav li{
+	flex: 1;
+	margin-right: 3%;
+	cursor: pointer;
+	border: 1px solid #000;
+	text-align: center;
+	padding: 10px 0;
+}
+.tabnav li:last-child{
+	margin-right: 0;
+}
+.tabnav li.active{
+	color: #fff;
+	background: #000;
+}
+.tabnav li.class01.active{
+	background: #f2db66;
+	border: 1px solid #f2db66;
+}
+.tabnav li.class02.active{
+	background: #d94a4a;
+	border: 1px solid #d94a4a;
+}
+.tabnav li.class03.active{
+	background: #8dd94a;
+	border: 1px solid #8dd94a;
+}
+.tab-content{
+	display:none;
+}
+.tab-content.active{
+	display:block;
+}
+.tab-content-box{
+	padding: 15px;
+	height: 300px;
+}
+.tab-content.class01 .tab-content-box{
+	border: 5px solid #f2db66;
+}
+.tab-content.class02 .tab-content-box{
+	border: 5px solid #d94a4a;
+}
+.tab-content.class03 .tab-content-box{
+	border: 5px solid #8dd94a;
+}

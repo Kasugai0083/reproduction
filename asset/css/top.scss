@@ -1,0 +1,179 @@
+@charset "utf-8";
+$SECTION_SPACE: 2rem;
+$base-width:375px * 0.9;
+
+
+/* -------------------- top-sec ------------------- */
+.top-sec{
+    background: 
+        url(../images/top/kinpaku_wall.png) no-repeat top left / 80%,
+        url(../images/top/top_wall.jpg) repeat center / 11%
+    ;
+}
+.top-intro{
+    justify-content: space-between;
+    margin-bottom: $SECTION_SPACE;
+
+    .top-intro__logo{
+        width: (91px / $base-width) * 100%;
+    }
+    .top-intro__traveler{
+        position: relative;
+        width: (120px / $base-width) * 100%;
+        margin-top: 1rem;
+        margin-right: 1rem;
+
+        .point{
+            position: relative;
+            z-index: 1;
+        }
+        .cloud-a{
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: (232px / 120px) * 100%;;
+            max-width: none;
+        }
+    }
+}
+.top-ttl{
+    margin-bottom: $SECTION_SPACE * 2;
+    width: 90%;
+    margin-inline:auto;
+
+    .top-ttl__main{
+        position: relative;
+        z-index: 1;
+    }
+    .top-ttl__campain{
+        position: relative;
+        width: 388px / 612px * 100% ;
+        margin-inline:auto;
+
+        .point{
+            position: relative;
+            z-index: 1;
+        }
+        .cloud-b{
+            position: absolute;
+            top: 100%;
+            left: 100%;
+            transform: translateX(-50%) translateY(-50%);
+            width: (285px / 338px) * 100%;;
+            max-width: none;
+        }
+    }
+
+}
+
+.top-chosen{
+    justify-content: space-between;
+    align-items: end;
+    gap: 2em;
+    font-weight: 900;
+
+
+    &__traveler{
+        width: 20%;
+        max-width: 44px;
+        margin-left: 1em;
+    }
+    &__message{
+        line-height: 1.4;
+        font-size: 0.95rem;
+
+        #name{
+            font-size: 24px;
+        }
+
+    }
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+/* -------------------- top-xxxx__section ------------------- */
+
+@media screen and (min-width: 768px){
+  
+}
+@media screen and (max-width: 767px){
+  
+}
+
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+

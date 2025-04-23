@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- タイトル・ディスクリプション・キーワード -->
+<title>構築テンプレート</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="サイトの概要を記入">
+
+<!--ファビコン、IOSタイコン、検索結果サムネイル-->
+<!-- <link rel="icon" href="https://xxxx/images/ogp/favicon.ico" />
+<meta name="thumbnail" content="https://xxxx/images/thumb.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://xxxx/images/apple-touch-icon-152x152.png"> -->
+
+<!-- OGPTOP -->
+<!-- <meta property="og:title" content="サイトのタイトルを記入">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xxxx/">
+<meta property="og:image" content="https://xxxx/images/ogp.jpg">
+<meta property="og:site_name" content="サイトのタイトルを記入">
+<meta property="og:description" content="サイトの概要を記入。">
+<meta property="fb:app_id" content="442639899274183"/>
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<!-- 全ページ共通CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+<!-- キャッシュクリア読み込み -->
+<!-- <link rel="stylesheet" href="/css/〇〇〇〇.css<?php echo '?v=' . filemtime($_SERVER['DOCUMENT_ROOT'].'/css/〇〇〇〇.css'); ?>"> -->
+
+<link rel="stylesheet" href="asset/css/jquery.fatNav.css">
+<link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/animation.css">
+<link rel="stylesheet" href="asset/css/const.css">
+
+<!-- トップCSS -->
+<link rel="stylesheet" href="asset/css/top.css">
+<!-- 下層CSS -->
+<link rel="stylesheet" href="asset/css/freepage.css">
+
+<!-- フォント -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<header class="headerarea">
+	<h1 class="g-pageTtl">テンプレート</h1>
+</header>
+<div class="fat-nav"></div>
+
+<main id="mainarea">
+	<style>
+		.loading-area{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: #fff;
+			z-index: 9999;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 30px;
+		}
+	</style>
+	<div class="loading-area">
+		テストちう・・・
+	</div>
+	<script>	
+$(document).ready(function() {
+    // すべての画像が読み込まれたら処理を実行
+    $(window).on('load', function() {
+        let allImages = document.querySelectorAll('img:not([loading="lazy"])'); // lazy loadingの画像を除外
+        let totalImages = allImages.length;
+        let loadedImages = 0;
+
+        if (totalImages === 0) {
+            executeAfterImagesLoaded();
+        } else {
+            for (let img of allImages) {
+                if (img.complete) {
+                    loadedImages++;
+                    if (loadedImages === totalImages) {
+                        executeAfterImagesLoaded();
+                    }
+                } else {
+                    img.onload = function() {
+                        loadedImages++;
+                        if (loadedImages === totalImages) {
+                            executeAfterImagesLoaded();
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    function executeAfterImagesLoaded() {
+        // .loading-areaをフェードアウト
+        $('.loading-area').fadeOut(500);
+    }
+});
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<div class="g-sec">
+		<h2 class="g-secTtl">
+			●FV用スライダー●
+		</h2>
+		<style>
+			.tp-fvSlider article{
+				padding-inline: clamp(5px,1vw,10px);
+			}
+			.tp-fvSlider .slick-slide{
+				width: calc(90vw + 20px);
+				max-width: 1220px;
+			}
+			.tp-fvSlider .slide-arrow{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 10;
+				padding: 10px;
+				width: clamp(20px,3vw,30px);
+				box-sizing: content-box;
+				cursor: pointer;
+			}
+			.tp-fvSlider .prev-arrow{
+				left: 2.5%;
+			}
+			.tp-fvSlider .next-arrow{
+				right: 2.5%;
+			}
+		</style>
+		<div class="tp-fvSlider slide">
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/1800x1000.png">
+					<img src="https://placehold.jp/1800x1000.png" srcset="https://placehold.jp/1800x1000.png 1x,https://placehold.jp/1800x1000.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/1800x1000.png">
+					<img src="https://placehold.jp/1800x1000.png" srcset="https://placehold.jp/1800x1000.png 1x,https://placehold.jp/1800x1000.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/1800x1000.png">
+					<img src="https://placehold.jp/1800x1000.png" srcset="https://placehold.jp/1800x1000.png 1x,https://placehold.jp/1800x1000.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+		</div>
+		<script>
+			$('.tp-fvSlider').slick({
+				dots: true,
+				arrows: true,
+				prevArrow: '<p class="slide-arrow prev-arrow"><img src="asset/images/common/icon_arrow_prev.svg" width="40" height="40"></p>',
+				nextArrow: '<p class="slide-arrow next-arrow"><img src="asset/images/common/icon_arrow.svg" width="40" height="40"></p>',
+				variableWidth: true,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 3000,
+				speed: 1000,
+				centerMode: true,
+				responsive: [
+					{
+						breakpoint: 950,
+						settings: {
+						}
+					},
+					{
+						breakpoint: 767,
+						settings: {
+
+						}
+					}
+				]
+			});
+		</script>
+	</div>
+	<div class="g-sec">
+		<h2 class="g-secTtl">
+			●横にカーソル付スライダー●
+		</h2>
+		<style>
+			.tp-fvCursorSlider article{
+				padding-inline: clamp(5px,2vw,20px);
+			}
+			.tp-fvCursorSlider .slide-arrow{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 10;
+				padding: 10px;
+				height: 100%;
+				width: 10%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: rgba(255,255,255,0.5);
+				cursor: pointer;
+			}
+			.tp-fvCursorSlider .slide-arrow img{
+				width: clamp(20px,3vw,30px);
+				margin-inline:auto;
+			}
+			.tp-fvCursorSlider .prev-arrow{
+				left: 0%;
+			}
+			.tp-fvCursorSlider .next-arrow{
+				right: 0%;
+			}
+		</style>
+		<div class="tp-fvCursorSlider slide">
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/1000x500.png">
+					<img src="https://placehold.jp/1000x500.png" srcset="https://placehold.jp/1000x500.png 1x,https://placehold.jp/1000x500.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/1000x500.png">
+					<img src="https://placehold.jp/1000x500.png" srcset="https://placehold.jp/1000x500.png 1x,https://placehold.jp/1000x500.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/1000x500.png">
+					<img src="https://placehold.jp/1000x500.png" srcset="https://placehold.jp/1000x500.png 1x,https://placehold.jp/1000x500.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+		</div>
+		<script>
+			$('.tp-fvCursorSlider').slick({
+				dots: true,
+				arrows: true,
+				prevArrow: '<p class="slide-arrow prev-arrow"><img src="asset/images/common/icon_arrow_prev.svg" width="30" height="30"></p>',
+				nextArrow: '<p class="slide-arrow next-arrow"><img src="asset/images/common/icon_arrow.svg" width="30" height="30"></p>',
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 3000,
+				speed: 1000,
+				centerMode: true,
+				centerPadding: '10%',
+				responsive: [
+					{
+						breakpoint: 950,
+						settings: {
+						}
+					},
+					{
+						breakpoint: 767,
+						settings: {
+		
+						}
+					}
+				]
+			});
+		</script>
+	</div>
+
+	<div class="g-sec">
+		<h2 class="g-secTtl">
+			●ループスライダー●
+		</h2>
+		<style>
+			.tp-loopSlider  .slick-slide{
+				padding-inline: var(--slider_space,15px);
+				width: 287px;
+			}
+		</style>
+		<div class="tp-loopSlider slide">
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+			<article>
+				<picture>
+					<source media="(max-width:767px)" srcset="https://placehold.jp/200x200.png">
+					<img src="https://placehold.jp/200x200.png" srcset="https://placehold.jp/200x200.png 1x,https://placehold.jp/200x200.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+				</picture>
+			</article>
+		</div>
+		<script>
+			$('.tp-loopSlider').slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        variableWidth: true,
+        slidesToScroll: 1,
+        autoplaySpeed: 0,
+        autoplay: true,
+        speed: 10000,
+        cssEase: "linear",
+        swipe: false,
+				responsive: [
+					{
+						breakpoint: 767,
+						settings: {
+						}
+					}
+				]
+			});
+		</script>
+
+	</div>
+</main>
+
+<footer class="footerarea"></footer>
+
+<div id="pagetop">
+	<a href="#"><span></span></a>
+</div>
+
+<!-- JS -->
+<script src="asset/js/jquery.fatNav.min.js"></script>
+<script src="asset/js/common.js"></script>
+<script src="asset/js/animation.js"></script>
+<script src="asset/js/top.js"></script>
+
+</body>
+</html>

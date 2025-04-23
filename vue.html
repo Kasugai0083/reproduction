@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- タイトル・ディスクリプション・キーワード -->
+<title>構築テンプレート | VueVue</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="サイトの概要を記入">
+
+<!--ファビコン、IOSタイコン、検索結果サムネイル-->
+<!-- <link rel="icon" href="https://xxxx/images/ogp/favicon.ico" />
+<meta name="thumbnail" content="https://xxxx/images/thumb.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://xxxx/images/apple-touch-icon-152x152.png"> -->
+
+<!-- OGP下層 -->
+<!-- <meta property="og:title" content="サイトのタイトルを記入">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xxxx/yyyy.html">
+<meta property="og:image" content="https://xxxx/images/ogp.jpg">
+<meta property="og:site_name" content="サイトのタイトルを記入">
+<meta property="og:description" content="サイトの概要を記入。">
+<meta property="fb:app_id" content="442639899274183"/>
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<!-- 全ページ共通CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+<link rel="stylesheet" href="asset/css/jquery.fatNav.css">
+<link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/animation.css">
+<link rel="stylesheet" href="asset/css/const.css">
+
+<!-- 下層CSS -->
+<link rel="stylesheet" href="asset/css/freepage.css">
+
+<!-- フォント -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<header class="headerarea g-wrapper __hf"></header>
+<div class="fat-nav"></div>
+
+<main id="mainarea">
+
+
+		<ul class="vue-list">
+			<li v-for="img in images" :key="index">
+					<picture>
+						<source media="(max-width:767px)" :srcset="img.sp">
+						<img :src="img.src" :srcset="img.pc" :alt="img.alt" :width="img.width" :height="img.height" loading="lazy" class="imgauto">
+					</picture>
+			</li>
+		</ul>
+		<script>
+		new Vue({
+			el: ".vue-list",
+			data:{
+				images:[
+				{
+						src:"https://placehold.jp/150x150.png",
+						pc:"https://placehold.jp/150x150.png 1x,https://placehold.jp/150x150.png 2x",
+						sp:"https://placehold.jp/150x150.png",
+						alt:"test1", width:"150", height:"150"
+					},
+					{
+						src:"https://placehold.jp/300x300.png",
+						pc:"https://placehold.jp/300x300.png 1x,https://placehold.jp/300x300.png 2x",
+						sp:"https://placehold.jp/300x300.png",
+						alt:"test2", width:"300", height:"300"
+					},
+					{
+						src:"https://placehold.jp/600x600.png",
+						pc:"https://placehold.jp/600x600.png 1x,https://placehold.jp/600x600.png 2x",
+						sp:"https://placehold.jp/600x600.png",
+						alt:"test3", width:"600", height:"600"
+					},
+
+				]
+			}
+		})
+		</script>
+</main>
+
+<footer class="footerarea"></footer>
+
+<div id="pagetop">
+	<a href="#"><span></span></a>
+</div>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="asset/js/jquery.fatNav.min.js"></script>
+<script src="asset/js/common.js"></script>
+<script src="asset/js/animation.js"></script>
+<script src="asset/js/subpage.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* ■■■■■■■■■■アコーディオン■■■■■■■■■■ */
+/* ------------------  -------------------- */
+.g-acodion{
+	width: 90%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+.g-acodion dl:not(:last-child){
+	border-bottom: 1px solid #000;
+}
+.g-acodion dt{
+	font-weight: bold;
+	cursor: pointer;
+	position: relative;
+}
+.g-acodion dd{
+	display: none;
+	line-height: 2;
+	position: relative;
+}
+.g-acodion dt::before,
+.g-acodion dd::before{
+	font-weight: bold;
+	position: absolute;
+}
+.g-acodion dt::before{
+	content: 'Q';
+	color: #5654a2;
+}
+.g-acodion dd::before{
+	content: 'A';
+	color: #ba8200;
+}
+.g-acodion dt::after{
+	font-family: "Font Awesome 5 Free";
+	content: "\2b";
+	font-weight: 100;
+	position: absolute; 
+	transition: 0.3s;
+}
+.g-acodion dt.active::after {
+	transform: rotate( 45deg);
+}
+@media screen and (min-width: 768px){
+	.g-acodion dl:not(:last-child){
+		padding-bottom: 20px;
+		margin-bottom: 40px;
+	}
+	.g-acodion dt{
+		font-size: 19px;
+		padding: 0 65px;
+	}
+	.g-acodion dd{
+		padding: 30px 65px 10px;
+	}
+	.g-acodion dt::before,
+	.g-acodion dd::before{
+		font-size: 30px;
+		left: 20px;
+	}
+	.g-acodion dt::before{
+		top: -15px;
+	}
+	.g-acodion dd::before{
+		top: 15px;
+	}
+	.g-acodion dt::after{
+		font-size: 20px; 
+		top: -2px;
+		right: 5px;
+	}
+}
+@media screen and (max-width: 767px){
+	.g-acodion dl:not(:last-child){
+		padding-bottom: 15px;
+		margin-bottom: 30px;
+	}
+	.g-acodion dt{
+		font-size: 15px;
+		padding: 0 35px;
+	}
+	.g-acodion dd{
+		padding: 10px 35px 10px;
+	}
+	.g-acodion dt::before,
+	.g-acodion dd::before{
+		font-size: 20px;
+		left: 5px;
+	}
+	.g-acodion dt::before{
+		top: -6px;
+	}
+	.g-acodion dd::before{
+		top: 6px;
+	}
+	.g-acodion dt::after{
+		font-size: 16px;
+		top: -2px;
+		right: 5px;
+	}
+}

@@ -1,0 +1,296 @@
+/* リセットCSS */
+*{margin:0;padding:0;min-height: 0;min-width: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+html {height:100%;}
+ul li ,ol li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;font-size: 100%;margin: 0;}
+p{margin: 0;}
+a:focus, *:focus{ outline:none; }
+article, header, footer, aside, figure, figcaption, nav, section,main{ 
+  display:block;
+}
+body{
+	font-family: 'Noto Sans JP',"游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+	font-weight: 400;
+	font-feature-settings: "palt" 1;
+	letter-spacing: 0.06em;
+	width:100%;
+	color: var(--MAIN_BLACK);
+	position:relative;
+	z-index: 0;
+}
+a{
+	text-decoration: none;
+	outline: none;
+	word-wrap: break-word;
+	color: var(--MAIN_BLACK);
+}
+a img,a{
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all  0.5s;
+}
+img{
+	height: auto;
+	max-width: 100%;
+	box-sizing: unset;
+	vertical-align: bottom;
+}
+/* form初期化 */
+#headerarea button,
+#footerarea button,
+.TopPage button,
+.TopPage input[type="submit"]{
+	background-color: unset;
+	-webkit-appearance: none;
+	border-radius: 0;
+	border: none;
+}
+/* フォントCSS */
+
+/* notosans読み込み */
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../font/notosans-r.woff') format('woff'),
+			url('../font/notosans-r.eot')  format('eot');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../font/notosans-m.woff') format('woff'),
+			url('../font/notosans-m.eot')  format('eot');
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../font/notosans-b.woff') format('woff'),
+			url('../font/notosans-b.eot')  format('eot');
+	font-display: swap;
+}
+.sans{
+	font-family: 'Noto Sans JP',sans-serif;
+}
+.mincho{
+	font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+}
+/* img用クラス */
+.imgauto{
+	height: auto;
+	width: 100%;
+	box-sizing: unset;
+	line-height: 1rem;
+	display: block;
+}
+.imgauto-h{
+	height: 100%;
+	width: 100%;
+	box-sizing: unset;
+	line-height: 1rem;
+	display: block;
+	object-fit: cover;
+}
+
+::placeholder{opacity: .6;}
+button{
+	cursor: pointer;
+}
+/* インナー設定 */
+.inner,
+.pc-inner,
+.sp-inner{
+	margin-left: auto;
+	margin-right: auto;
+}
+/* フレックス */
+.flex{
+	display: flex;
+}
+.fxw{
+	display: flex;
+	flex-wrap: wrap;
+}
+.jcsb{
+	display: flex;
+	justify-content: space-between;
+}
+/* スライダー読み込みまで非表示 */
+.slide{
+	opacity: 0;
+	transition: opacity .3s linear;
+}
+.slide.slick-initialized{
+	opacity: 1;
+}
+/* スクロールバー消す */
+.y-scroll,
+.x-scroll{
+	-ms-overflow-style: none;/* IE, Edge 対応 */
+	scrollbar-width: none; /* Firefox 対応 */
+}
+.y-scroll{
+	overflow-y: scroll;
+	overflow-x: auto;
+}
+.x-scroll{
+	overflow-x: scroll;
+	overflow-y: auto;
+}
+.y-scroll::-webkit-scrollbar,
+.x-scroll::-webkit-scrollbar{/* Chrome, Safari 対応 */
+	display: none;
+}
+/* 縦書き */
+.tategaki{
+	-webkit-writing-mode: vertical-rl;
+	-ms-writing-mode: tb-rl;
+	-o-writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
+}
+#wrapper > main,
+.flex > main{
+	flex: 1;
+}
+/* --------------------FSパーツ初期化用(いらない場合削除)------------------- */
+#wrapper{
+	width: 1350px;
+	max-width: 1350px;
+	margin: 0 auto;
+}
+#mainarea{
+	flex: 1;
+}
+.fs-client-cart-count{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	aspect-ratio: 1/1;
+	width: 20px;
+	font-size: 11px;
+	background-color: #000;
+	color: var(--WHITE);
+	border-radius: 50%;
+	position: absolute;
+}
+/* -------------------- pagetop ------------------- */
+#pagetop a {
+  display: block;
+  position: fixed;
+  box-sizing: content-box;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  background-color: black;
+  /* background-image: url("../images/common/icon_pagetop.svg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 15px;
+  bottom: 15px;
+  right: 5px;
+}
+@media screen and (min-width: 768px){
+	html{
+		scroll-padding-top: 80px;
+	}
+	body{
+		font-size: 15px;
+		line-height: 1.7;
+		-ms-text-size-adjust: 100%;
+		-webkit-text-size-adjust: 100%;
+	}
+	a:hover{
+		opacity: 0.7;
+		text-decoration: none;
+	}
+	a:hover img{
+		opacity:0.75 !important;
+	}
+	a[href^="tel:"] {
+		pointer-events: none;
+	}
+	.sp{
+		display: none !important;
+	}
+	.hamburger{
+		display: none !important;
+	}
+	#headerarea button:hover,
+	#footerarea button:hover,
+	#mainarea.TopPage button:hover,
+	.TopPage input[type="submit"]:hover{
+		cursor: pointer;
+	}
+}
+@media screen and (max-width: 767px){
+	body{
+		font-size: 14px;
+		line-height: 1.6;
+	}
+	.pc{
+		display: none !important;
+	}
+}
+
+
+/* --------------------header------------------- */
+
+@media screen and (min-width: 768px){
+
+}
+@media screen and (max-width: 767px){
+
+}
+
+/* --------------------footer------------------- */
+
+@media screen and (min-width: 768px){
+
+}
+@media screen and (max-width: 767px){
+
+}
+
+/* --------------------全ページ共通部分------------------- */
+.hvr-img{
+	overflow: hidden;
+	position: relative;
+}
+a:hover .hvr-img img{
+	transform: scale(1.1);
+}
+/**** セクション汎用クラス ****/
+.g-sec{
+	padding-top: var(--pdt,var(--SECTION_PADDING));
+	padding-bottom: var(--pdb,var(--SECTION_PADDING));
+}
+
+/**** ラッパー汎用クラス ****/
+.g-wrapper{
+	max-width: var(--wrapper_max_width,1000px);
+	width: var(--wrapper_width,90%);
+	margin-inline:auto;
+}
+
+/**** タイトル汎用クラス ****/
+.g-pageTtl{
+	text-align: var(--pageTtl_align,center);
+	margin-bottom: var(--pageTtl_mgb,2em);
+	font-size: var(--pageTtl_fs,var(--FONT_SIZE_TITLE));
+	font-weight: var(--pageTtl_fw,bold);
+	font-family: var(--pageTtl_ff,var(--FONT_SERIF));
+}
+.g-secTtl{
+	text-align: var(--secTtl_align,center);
+	margin-bottom: var(--secTtl_mgb,2em);
+	font-size: var(--secTtl_fs,var(--FONT_SIZE_L));
+	font-weight: var(--secTtl_fw,bold);
+}
+/**** ボタン汎用クラス ****/
+
+

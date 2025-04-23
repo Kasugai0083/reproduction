@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- タイトル・ディスクリプション・キーワード -->
+<title>構築テンプレート</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="サイトの概要を記入">
+
+<!--ファビコン、IOSタイコン、検索結果サムネイル-->
+<!-- <link rel="icon" href="https://xxxx/images/ogp/favicon.ico" />
+<meta name="thumbnail" content="https://xxxx/images/thumb.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://xxxx/images/apple-touch-icon-152x152.png"> -->
+
+<!-- OGPTOP -->
+<!-- <meta property="og:title" content="サイトのタイトルを記入">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xxxx/">
+<meta property="og:image" content="https://xxxx/images/ogp.jpg">
+<meta property="og:site_name" content="サイトのタイトルを記入">
+<meta property="og:description" content="サイトの概要を記入。">
+<meta property="fb:app_id" content="442639899274183"/>
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<!-- 全ページ共通CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+<!-- キャッシュクリア読み込み -->
+<!-- <link rel="stylesheet" href="/css/〇〇〇〇.css<?php echo '?v=' . filemtime($_SERVER['DOCUMENT_ROOT'].'/css/〇〇〇〇.css'); ?>"> -->
+
+<link rel="stylesheet" href="asset/css/jquery.fatNav.css">
+<link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/animation.css">
+<link rel="stylesheet" href="asset/css/const.css">
+
+<!-- トップCSS -->
+<link rel="stylesheet" href="asset/css/top.css">
+<!-- 下層CSS -->
+<link rel="stylesheet" href="asset/css/freepage.css">
+
+<!-- フォント -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<header class="headerarea">
+	<h1 class="g-pageTtl">
+		ページタイトル
+	</h1>
+</header>
+<div class="fat-nav"></div>
+
+<main id="mainarea">
+	<div class="g-sec">
+		<div class="g-wrapper">
+			<h2 class="g-secTtl">
+				●カートボタン付商品説明●
+			</h2>
+
+			<!----------------------------------------------------------
+			--	●カートボタン付商品説明
+			--	概要：FSで使用するカート付き商品表示
+			----------------------------------------------------------->
+			<style>
+				.tp-cartProduct{
+					max-width: 300px;
+					margin-inline:auto;
+				}
+				.tp-cartProduct__thumb{
+					margin-bottom: 20px;
+					position: relative;
+				}
+
+				.tp-cartProduct__form{
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+				.tp-cartProduct__price{
+					margin-right: 1em;
+					font-size: 18px;
+				}
+				.tp-cartProduct__form input[type=number]{
+					width: 3.5em;
+					padding-left: 5px;
+					font-size: var(--FONT_SIZE_S);
+				}
+				.tp-cartProduct__form input[type=number]::-webkit-inner-spin-button,
+				.tp-cartProduct__form input[type=number]::-webkit-outer-spin-button {
+					opacity: 1;
+				}
+				.tp-cartProduct__form > input[type="button"]{
+					width: 100%;
+					font-size: var(--FONT_SIZE_S);
+					background-color: var(--MAIN_WHITE);
+					border: 1px solid var(--MAIN_BLACK);
+					border-radius: var(--BTN_RADIUS);
+					padding: .4em 2em;
+					margin-top: 20px;
+					cursor: pointer;
+					transition: .8s;
+				}
+				.tp-cartProduct__form > input[type="button"]:hover{
+					background-color: var(--MAIN_BLACK);
+					color: var(--MAIN_WHITE);
+				}
+			</style>
+			<article class="tp-cartProduct">
+				<p class="tp-cartProduct__thumb">
+					<picture>
+						<source media="(max-width:767px)" srcset="https://placehold.jp/440x440.png">
+						<img src="https://placehold.jp/440x440.png" srcset="https://placehold.jp/440x440.png 1x,https://placehold.jp/440x440.png 2x" alt="" width="" height="" loading="lazy" class="imgauto">
+					</picture>
+				</p>
+				<form class="tp-cartProduct__form" action="https://www.hime-labo.com/p/cart/add" method="post">
+					<p class="tp-cartProduct__price">
+						￥<span>値段値段</span>
+					</p>
+					<input type="number" name="products[xxxx].quantity" value="1">
+					<input type="hidden" name="products[xxxx].productNo" value="xxxx">
+					<input type="button" name="toCart" onclick="return canSubmit();" value="カートに入れる">
+				</form>
+			</article>
+		</div>
+	</div>
+	<div class="g-sec">
+		<div class="g-wrapper">
+			<h2 class="g-secTtl">
+				●サーチフォーム●
+			</h2>
+			<!----------------------------------------------------------
+			--	●サーチフォーム
+			--	概要：FSで使用する検索フォーム
+			----------------------------------------------------------->
+			<style>
+				.tp-searchForm{
+					position: relative;
+					background-color: var(--MAIN_GRAY);
+					padding-inline: 1em;
+					border-radius: var(--BTN_RADIUS);
+					display: flex;
+					gap: 1em;
+					max-width: 600px;
+					margin-inline:auto;
+					align-items: center;
+				}
+				.tp-searchForm input[type=text]{
+					width: 100%;
+					padding-left: 5px;
+					font-size: var(--FONT_SIZE_XS);
+					background-color: initial;
+					padding-block: 1em;
+				}
+				.tp-searchForm > button[type="submit"]{
+					background-color: initial;
+					cursor: pointer;
+					width: 1.5em;
+				}
+			</style>
+			<form action="/p/search/" post="get" class="tp-searchForm">
+				<button type="submit" value="">
+					<img src="asset/images/common/icon_search.png" alt="" width="15" height="15" class="imgauto">
+				</button>
+				<input type="text" name="keyword" placeholder="商品を探す">
+			</form>
+		</div>
+	</div>
+	<div class="g-sec">
+		<div class="g-wrapper">
+			<h2 class="g-secTtl">
+				●FSシステム県連●
+			</h2>
+			<div class="flex" style="align-items: center; justify-content: center; gap: 20px;">
+				<!----------------------------------------------------------
+				--	●マイページ
+				--	概要：FSでログイン状況で切り替わるマイページボタン
+				--	my-falseは実装時に取る
+				----------------------------------------------------------->
+				<style>
+					.logout.my-false { display: none; }
+					.login.my-true { display: none; }
+					.tp-fsMyAccount{
+						text-align: center;
+					}
+					.tp-fsMyAccount img{
+						width: 25px;
+						margin-inline:auto;
+					}
+					.tp-fsMyAccount span{
+						font-size: var(--FONT_SIZE_XXS);
+					}
+				</style>
+				<div class="tp-fsMyAccount fs-clientInfo">
+					<a href="/my/top" class="logout my-{@ member.logged_in @} my-false">
+						<img src="asset/images/common/icon_mypage.svg" alt="マイページ" width="19" height="18" class="imgauto">
+						<span>マイページ</span>
+					</a>
+					<a href="/p/login" class="login my-{@ member.logged_in @} my-false">
+						<img src="asset/images/common/icon_mypage.svg" alt="マイページ" width="19" height="18" class="imgauto">
+						<span>ログイン</span>
+					</a>
+				</div>
+				<!----------------------------------------------------------
+				--	●カート
+				--	概要：カート内商品数を表示するカートボタン
+				--	.fs-client-cart-countの中身は実装時に取る
+				----------------------------------------------------------->
+				<style>
+					.fs-client-cart-count--0{display: none;}
+					.tp-fsCart{
+						position: relative;
+					}
+					.tp-fsCart img{
+						width: 25px;
+						margin-inline:auto;
+					}
+					.tp-fsCart span{
+						font-size: var(--FONT_SIZE_XXS);
+						text-align: center;
+					}
+					.tp-fsCart__num{
+						position: absolute;
+						top: -8px;
+						right: -8px;
+						background-color: var(--MAIN_BLACK);
+						color: var(--MAIN_WHITE);
+						border-radius: 50%;
+						width: 20px;
+						height: 20px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: var(--FONT_SIZE_XXS);
+					}
+				</style>
+				<div class="tp-fsCart">
+					<a href="/p/cart?type=purchase">
+						<p class="fs-client-cart-count tp-fsCart__num IBM">0</p>
+						<img src="asset/images/common/icon_cart.svg" alt="カート" width="18" height="19" class="imgauto">
+						<span>カート</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer class="footerarea"></footer>
+
+<div id="pagetop">
+	<a href="#"><span></span></a>
+</div>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="asset/js/jquery.fatNav.min.js"></script>
+<script src="asset/js/common.js"></script>
+<script src="asset/js/animation.js"></script>
+<script src="asset/js/top.js"></script>
+
+<!-- アコーディオン -->
+<script src="asset/js/template-js/acodion.js"></script>
+
+<!-- タブ切り替え -->
+<script src="asset/js/template-js/tab.js"></script>
+</body>
+</html>

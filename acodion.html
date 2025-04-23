@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- タイトル・ディスクリプション・キーワード -->
+<title>構築テンプレート | アコーディオン</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="サイトの概要を記入">
+
+<!--ファビコン、IOSタイコン、検索結果サムネイル-->
+<!-- <link rel="icon" href="https://xxxx/images/ogp/favicon.ico" />
+<meta name="thumbnail" content="https://xxxx/images/thumb.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://xxxx/images/apple-touch-icon-152x152.png"> -->
+
+<!-- OGP下層 -->
+<!-- <meta property="og:title" content="サイトのタイトルを記入">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xxxx/yyyy.html">
+<meta property="og:image" content="https://xxxx/images/ogp.jpg">
+<meta property="og:site_name" content="サイトのタイトルを記入">
+<meta property="og:description" content="サイトの概要を記入。">
+<meta property="fb:app_id" content="442639899274183"/>
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<!-- 全ページ共通CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+<link rel="stylesheet" href="asset/css/jquery.fatNav.css">
+<link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/animation.css">
+<link rel="stylesheet" href="asset/css/const.css">
+
+<!-- 下層CSS -->
+<link rel="stylesheet" href="asset/css/freepage.css">
+<link rel="stylesheet" href="asset/css/template-css/acodion.css">
+
+<!-- フォント -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<header class="headerarea g-wrapper __hf"></header>
+<div class="fat-nav"></div>
+
+<main id="mainarea">
+
+	<!-- アコーディオン -->
+	<div class="g-acodion">
+		<dl>
+			<dt>送料はいくらかかりますか?</dt>
+			<dd>テキストテキストテキストテキストテキスト</dd>
+		</dl>
+		<dl>
+			<dt>配達は何日かかります?</dt>
+			<dd>テキストテキストテキストテキストテキスト</dd>
+		</dl>
+		<dl>
+			<dt>ラッピングは有料ですか</dt>
+			<dd>テキストテキストテキストテキストテキスト</dd>
+		</dl>
+	</div>
+	<!-- アコーディオン -->
+</main>
+
+<footer class="footerarea"></footer>
+
+<div id="pagetop">
+	<a href="#"><span></span></a>
+</div>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="asset/js/jquery.fatNav.min.js"></script>
+<script src="asset/js/common.js"></script>
+<script src="asset/js/animation.js"></script>
+
+<!-- アコーディオン -->
+<script>
+$(function(){
+	$('.g-acodion dl dt').click(function() {
+		$(this).next('dd').slideToggle('fast');
+		$(this).toggleClass('active');
+	});
+})
+</script>
+
+</body>
+</html>

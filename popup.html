@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- タイトル・ディスクリプション・キーワード -->
+<title>構築テンプレート</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="サイトの概要を記入">
+
+<!-- 電話番号自動リンク無効化 -->
+<meta name="format-detection" content="telephone=no">
+
+<!-- ファビコン -->
+<link rel="icon" href="https://■/images/favicon.ico">
+
+<!-- 検索サムネイル対策 -->
+<meta name="thumbnail" content="https://■/images/thumb.jpg">
+
+<!-- アップルタッチアイコン -->
+<link rel="apple-touch-icon" href="/images/apple-touch-icon-152x152.png">
+
+<!-- OGP -->
+<meta property="og:title" content="■■■タイトル■■■">
+<meta property="og:type" content="website">
+<!-- <meta property="og:type" content="article">下層はarticle -->
+<meta property="og:url" content="https://■■■ドメイン■■■/該当ページのディレクトリ/">
+<meta property="og:image" content="https://■■■ドメイン■■■/images/ogp.jpg">
+<meta property="og:site_name" content="■■■タイトル■■■">
+<meta property="og:description" content="■■■ディスクリプション■■■">
+<meta property="fb:app_id" content="442639899274183"/>
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- キャッシュクリア読み込み -->
+<!-- <link rel="stylesheet" href="/css/〇〇〇〇.css<?php echo '?v=' . filemtime($_SERVER['DOCUMENT_ROOT'].'/css/〇〇〇〇.css'); ?>"> -->
+
+<!-- 全ページ共通CSS -->
+<link rel="stylesheet" href="asset/css/const.css">
+<link rel="stylesheet" href="asset/css/jquery.fatNav.css">
+<link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/animation.css">
+
+
+<!-- トップCSS -->
+<link rel="stylesheet" href="asset/css/top.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+<!-- 下層CSS -->
+<link rel="stylesheet" href="asset/css/freepage.css">
+
+<!-- フォント -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<header class="headerarea">
+	<h1 class="g-pageTtl">テンプレート</h1>
+</header>
+<div class="fat-nav">
+	<div class="fat-nav__wrapper">
+		<ul>
+			<li><a href="">Menu1</a></li>
+			<li><a href="">Menu2</a></li>
+			<li><a href="">Menu3</a></li>
+			<li><a href="">Menu4</a></li>
+		</ul>
+	</div>
+</div>
+
+<main id="mainarea" class="TopPage">
+	<div class="g-sec">
+		<div class="g-wrapper">
+			<h2 class="g-secTtl">
+				●ポップアップ(未調整)●
+			</h2>
+			<style>
+					/* ポップアップ共通css */
+					body.fixed {
+						position: fixed;
+						width: 100%;
+						overflow: hidden;
+					}
+					.popup-overlay {
+							display: none; /* 初めは非表示 */
+							position: fixed;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							background-color: rgba(0, 0, 0, 0.7); /* 背景は黒の透過 */
+							z-index: 9999;
+					}
+
+					.popup-content {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							background-color: var(--WHITE);
+							box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+					}
+			</style>
+			<!-- ポップアップのトリガーボタン -->
+			<button class="openPopup" type="button" data-popup-target="#popup1">ポップアップ1を開く</button>
+
+			<!-- 一つのポップアップに対して複数トリガーを設定することも可能。data-popup-target=の値を同じにしてください。 -->
+			<button class="openPopup" type="button" data-popup-target="#popup1">ポップアップ1を開く(2つ目のトリガー)</button>
+
+			<button class="openPopup" data-popup-target="#popup2">ポップアップ2を開く</button>
+
+			<!-- ポップアップの内容1 idをdata-popup-targetと同じ値を設置 -->
+			<div class="popup-overlay" id="popup1">
+					<div class="popup-content">
+							<p>ポップアップ1の内容です。</p>
+							<button class="closePopup" type="button">閉じる</button>
+					</div>
+			</div>
+
+			<!-- ポップアップの内容2 -->
+			<div class="popup-overlay" id="popup2">
+					<div class="popup-content">
+							<p>ポップアップ2の内容です。</p>
+							<button class="closePopup" type="button">閉じる</button>
+					</div>
+			</div>
+
+
+			<!-- あとからの仕様変更でaタグも簡単にトリガーにすることも可能 -->
+			<a href="javascript:void(0)" class="openPopup" data-popup-target="#popup1">ポップアップ1を開く</a>
+			<script>
+				// ポップアップ共通js
+				$(function () {
+					var scrollPosition;
+					$('.openPopup').click(function () {
+						scrollPosition = $(window).scrollTop();
+						$('body').addClass('fixed').css({ 'top': -scrollPosition });
+						var targetPopup = $(this).data('popup-target');
+						$(targetPopup).fadeIn();
+						$('html').css('scroll-behavior', 'auto');
+					});
+					$('button.closePopup, .popup-overlay').click(function (e) {
+						if (e.target !== this) {
+							return;
+						}
+						$(this).closest('.popup-overlay').fadeOut();
+						$('body').removeClass('fixed').css({ 'top': 0 });
+						$('html, body').prop({ scrollTop: scrollPosition });
+						$('html').css('scroll-behavior', 'smooth');
+					});
+				});
+			</script>
+		</div>
+	</div>
+	<div class="g-sec">
+		<div class="g-wrapper">
+			<h2 class="g-secTtl">
+				●FS仕様(未調整)●
+			</h2>
+			<div class="form-reset">
+				<button class="openPopup" type="button" data-popup-target="#popup-〇〇"></button>
+			
+				<div class="popup-overlay" id="popup-〇〇">
+					<div class="popup-content">
+						<div class="popup-box">
+							<!-- 〇〇についてポップアップコンテンツ(alaringo-FP) -->
+							{% parts[p-wrapping-contentes] %}
+							<button class="closePopup" type="button"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<style>
+			#popup-〇〇 .popup-content{
+				background-color: #fff;
+				position: relative;
+			}
+			#popup-〇〇 .popup-box{
+				overflow-y: scroll;
+			}
+			#popup-〇〇 button.closePopup{
+				position: absolute;
+				aspect-ratio: 1/1;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				background-color: var(--MAIN_RED);
+				top: 0;
+				right: 0;
+				transform: translate(50%, -50%);
+			}
+			#popup-〇〇 button.closePopup::before{
+				font-family: "fs-icon" !important;
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				content: "\e911";
+				display: block;
+				line-height: 1;
+				height: 1em;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				color: #fff;
+			}
+			@media screen and (min-width: 768px){
+				#popup-〇〇 .popup-content{
+					width: 95%;
+					max-width: 900px;
+				}
+				#popup-〇〇 .popup-box{
+					padding: 50px 30px;
+					max-height: 90vh;
+				}
+				#popup-〇〇 button.closePopup{
+					width: 40px;
+				}
+				#popup-〇〇 button.closePopup::before{
+					font-size: 23px;
+				}
+			}
+			@media screen and (max-width: 767px){
+				#popup-〇〇 .popup-content{
+					width: 90%;
+				}
+				#popup-〇〇 .popup-box{
+					padding: 30px 15px;
+					max-height: 80vh;
+				}
+				#popup-〇〇 button.closePopup::before{
+					font-size: 23px;
+				}
+				#popup-〇〇 button.closePopup{
+					width: 30px;
+				}
+				#popup-〇〇 button.closePopup::before{
+					font-size: 18px;
+				}
+			}
+			</style>
+		</div>
+	</div>
+</main>
+
+<footer class="footerarea"></footer>
+
+<div id="pagetop">
+	<a href="#"><span></span></a>
+</div>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="asset/js/jquery.fatNav.min.js"></script>
+<script src="asset/js/common.js"></script>
+<script src="asset/js/animation.js"></script>
+<script src="asset/js/top.js"></script>
+
+<!-- アコーディオン -->
+<script src="asset/js/template-js/acodion.js"></script>
+
+<!-- タブ切り替え -->
+<script src="asset/js/template-js/tab.js"></script>
+</body>
+</html>

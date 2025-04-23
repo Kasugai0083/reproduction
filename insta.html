@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- タイトル・ディスクリプション・キーワード -->
+<title>構築テンプレート | インスタ読み込み</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="サイトの概要を記入">
+
+<!--ファビコン、IOSタイコン、検索結果サムネイル-->
+<!-- <link rel="icon" href="https://xxxx/images/ogp/favicon.ico" />
+<meta name="thumbnail" content="https://xxxx/images/thumb.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://xxxx/images/apple-touch-icon-152x152.png"> -->
+
+<!-- OGP下層 -->
+<!-- <meta property="og:title" content="サイトのタイトルを記入">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xxxx/yyyy.html">
+<meta property="og:image" content="https://xxxx/images/ogp.jpg">
+<meta property="og:site_name" content="サイトのタイトルを記入">
+<meta property="og:description" content="サイトの概要を記入。">
+<meta property="fb:app_id" content="442639899274183"/>
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<!-- 全ページ共通CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+<link rel="stylesheet" href="asset/css/jquery.fatNav.css">
+<link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/animation.css">
+<link rel="stylesheet" href="asset/css/const.css">
+
+<!-- 下層CSS -->
+<link rel="stylesheet" href="asset/css/freepage.css">
+<link rel="stylesheet" href="asset/css/template-css/tab.css">
+
+<!-- フォント -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+
+<body>
+<style>
+	.instagram-list{
+		display: grid;
+		max-width: 800px;
+		margin-inline:auto;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 20px;
+		row-gap: 20px;
+	}
+</style>
+<header class="headerarea g-wrapper __hf"></header>
+<div class="fat-nav"></div>
+
+<main id="mainarea">
+
+	<!-- インスタ読み込み -->
+	<div id="instafeed" class="instagram-list"></div>
+
+</main>
+
+<footer class="footerarea"></footer>
+
+<div id="pagetop">
+	<a href="#"><span></span></a>
+</div>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="asset/js/jquery.fatNav.min.js"></script>
+<script src="asset/js/common.js"></script>
+<script src="asset/js/animation.js"></script>
+
+<!-- インスタ読み込み(リール削除対応) -->
+<script>
+$(function(){
+  let list = '';
+  const url = 'https://graph.facebook.com/v3.0/17841405903184591?fields=name%2Cmedia.limit(20)%7Bcaption%2Clike_count%2Cmedia_url%2Cpermalink%2Ctimestamp%2Cusername%7D&access_token=EAAJSMh9ImcwBO97JDVpNPUgcPviZBPQM1s0lBy5dZBNvwLOANXJY8GwOf4Q4UdOJq9PD9OopvxvuCucbZCSnaOiw1Ogmcqr2N58rlUWDm62eTPpWyO8TuRB6VoAIiV9RFKGWzhWdHcZBIgIiZAi8LCpUqZCqY736cRJWdJ5LYHwuC6GbgqHLZB5PKiwinbKDZAGSe64woq3C9aZAcvQUZD';
+  
+  let count = 0;  // 追加された投稿のカウントを追加
+  
+  $.ajax({
+    url: url
+  }).done((res) => {
+    const data = res.media.data;  // APIのレスポンス構造に合わせて修正
+  
+    for (let item of data) {  // for...ofループを使用
+      if (count >= 9) break;  // 9件以上の場合は処理を終了
+  
+      if (item.media_url && !item.media_url.includes('.mp4')) {  // .mp4のURLを除外
+        //メディアのタイプがビデオの場合、サムネを取得
+        let media = (item.media_type == 'VIDEO' ? item.thumbnail_url : item.media_url);
+        // 一覧を変数listに格納
+        list +=
+        `<article>
+          <a href="${item.permalink}" target="_blank" rel="noopener">
+            <p class="g-auto__sliderThumb hvr-img">
+                <img src="${media}" width="159" height="159" loading="lazy" class="imgauto">
+            </p>
+          </a>
+        </article>`;
+        count++;  // 投稿を追加したらカウントを増やす
+      }
+    }
+  
+    $('#instafeed').html(`${list}`);
+  }).fail(function(jqXHR, status, error) {
+    $('#instafeed').html('<p>読み込みに失敗しました。</p>');
+  });
+});
+
+
+</script>
+
+</body>
+</html>

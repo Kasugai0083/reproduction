@@ -1,0 +1,33 @@
+/* ------------------ pri-contents__section -------------------- */
+.pri-contents__container{
+  background-color: var(--BG_COLOR);
+}
+.pri-contents__container :is(p,dd:not(:last-child)){
+  font-size: 16px;
+  margin-bottom: 3em;
+}
+.pri-contents__data dt{
+  color: var(--THEME_COLOR);
+  font-weight: bold;
+  border-left: 6px solid var(--THEME_COLOR);
+  padding-left: .6em;
+  line-height: 1.4;
+  font-size: 18px;
+  margin-bottom: 1em;
+}
+@media screen and (min-width: 768px){
+  .pri-contents__section{
+    padding-bottom: 80px;
+  }
+  .pri-contents__container{
+    padding: 3em;
+  }
+}
+@media screen and (max-width: 767px){
+  .pri-contents__section{
+    padding-bottom: 60px;
+  }
+  .pri-contents__container{
+    padding: 1.5em;
+  }
+}

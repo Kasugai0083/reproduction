@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- タイトル・ディスクリプション・キーワード -->
+<title>構築テンプレート</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="サイトの概要を記入">
+
+<!--ファビコン、IOSタイコン、検索結果サムネイル-->
+<!-- <link rel="icon" href="https://xxxx/images/ogp/favicon.ico" />
+<meta name="thumbnail" content="https://xxxx/images/thumb.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="https://xxxx/images/apple-touch-icon-152x152.png"> -->
+
+<!-- OGPTOP -->
+<!-- <meta property="og:title" content="サイトのタイトルを記入">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xxxx/">
+<meta property="og:image" content="https://xxxx/images/ogp.jpg">
+<meta property="og:site_name" content="サイトのタイトルを記入">
+<meta property="og:description" content="サイトの概要を記入。">
+<meta property="fb:app_id" content="442639899274183"/>
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image"> -->
+
+<!-- 全ページ共通CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+<!-- キャッシュクリア読み込み -->
+<!-- <link rel="stylesheet" href="/css/〇〇〇〇.css<?php echo '?v=' . filemtime($_SERVER['DOCUMENT_ROOT'].'/css/〇〇〇〇.css'); ?>"> -->
+
+<link rel="stylesheet" href="asset/css/jquery.fatNav.css">
+<link rel="stylesheet" href="asset/css/style.css">
+<link rel="stylesheet" href="asset/css/animation.css">
+<link rel="stylesheet" href="asset/css/const.css">
+
+<!-- トップCSS -->
+<link rel="stylesheet" href="asset/css/top.css">
+<!-- 下層CSS -->
+<link rel="stylesheet" href="asset/css/freepage.css">
+
+<!-- フォント -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-iKbFRxucmOHIcpWdX9NTZ5WETOPm0Goy0WmfyNcl52qSYtc2Buk0NCe6jU1sWWNB" crossorigin="anonymous">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<header class="headerarea">
+</header>
+<div class="fat-nav"></div>
+
+<style>
+	main{
+		padding: 400px 0;
+	}
+	.animation-container{
+		width: 500px;
+		aspect-ratio: 1;
+		margin-inline:auto;
+		margin-top: 60px;
+	}
+	.animation-container.red{
+		background-color: red;
+	}
+	.animation-container.blue{
+		background-color: blue;
+	}
+	.animation-container.green{
+		background-color: green;
+	}
+	.animation-container.yellow{
+		background-color: yellow;
+	}
+	.animation-container.black{
+		background-color: black;
+		color: red;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.animation-container--child{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 20px;
+		row-gap: 20px;
+		width: 600px;
+		height: 200px;
+		margin-inline:auto;
+		margin-top: 60px;
+	}
+	.animation-container--child > li{
+		background-color: black;
+	}
+	.fadein-text{
+		font-size: 62px;
+		font-weight: bold;
+		text-align: center;
+		margin-block: 3em;
+	}
+</style>
+
+<main id="mainarea">
+	<div class="bg-extend--left">
+		<div class="animation-container black">aaaa</div>
+	</div>
+	<div class="animation-container red fadeInTrigger"></div>
+	<div class="animation-container blue fadeLeftTrigger"></div>
+	<div class="animation-container green fadeRightTrigger"></div>
+	<div class="animation-container yellow fadeInTrigger"></div> 
+	<ul class="animation-container--child randomScroll">
+		<li class="randomTrigger"></li>
+		<li class="randomTrigger"></li>
+		<li class="randomTrigger"></li>
+	</ul>
+
+	<p class="fadein-text fadeInTrigger">テキストテキストテキスト</p>
+
+</main>
+
+<footer class="footerarea"></footer>
+
+<div id="pagetop">
+	<a href="#"><span></span></a>
+</div>
+
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="asset/js/jquery.fatNav.min.js"></script>
+<script src="asset/js/common.js"></script>
+<script src="asset/js/animation.js"></script>
+<script src="asset/js/top.js"></script>
+
+<!-- アコーディオン -->
+<script src="asset/js/template-js/acodion.js"></script>
+
+<!-- タブ切り替え -->
+<script src="asset/js/template-js/tab.js"></script>
+</body>
+</html>

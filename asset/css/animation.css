@@ -1,0 +1,162 @@
+@charset "utf-8";
+[class*="Trigger"]{
+  opacity: 0;
+}
+/* -------------------- fadeIn ------------------- */
+.fade-in{
+  animation-name:fade-in-anime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-in-anime{
+  0%{
+    transform: translate(10px,10px);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0px,0px);
+    opacity: 1;
+  }
+}
+/* -------------------- fade-side ------------------- */
+.fade-left{
+  animation-name:fade-left-anime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-left-anime{
+  0%{
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+.fade-right{
+  animation-name:fade-right-anime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fade-right-anime{
+  0%{
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+/* -------------------- JumpUp ------------------- */
+.anime-JumpUp{
+  animation-name:jump-up-anime;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes jump-up-anime{
+  0%{
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  30%{
+    transform: translateY(5px);
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+/* -------------------- bg-extend ------------------- */
+[class*="bg-extend"]{
+  animation-name:bg-extend-base-anime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+  margin-inline:auto;
+  opacity: 0;
+}
+@keyframes bg-extend-base-anime{
+  0%{opacity: 0;}
+  100%{opacity:1;}
+}
+[class*="bg-extend"] > *{
+  animation-name:bg-extend-child-anime;
+  animation-duration: 1s;
+  animation-delay: .6s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes bg-extend-child-anime{
+  0%{opacity: 0;}
+  100%{opacity:1;}
+}
+.bg-extend--left::before{
+  animation-name: bg-extend-left-anime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}
+@keyframes bg-extend-left-anime{
+  0%{
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  50%{
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  50.001%{
+    transform-origin: right;
+  }
+  100%{
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

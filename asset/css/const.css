@@ -1,0 +1,36 @@
+@charset "utf-8";
+:root{
+  /* 色 */
+	--MAIN_WHITE:#fff;
+	--MAIN_BLACK:#000;
+  --MAIN_GRAY:#F4F4F4;
+  --MAIN_RED:#BA4F3C;
+  
+  --BORDER_GRAY:#BFBFBF;
+
+  --GREEN_BG:#00ff00;
+
+  /* フォント */
+  --FONT_SANS: 'Noto Sans JP',"游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  --FONT_SERIF: 'Noto Serif JP',"游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", serif;
+  --FONT_MINCHO: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+
+  /* 成型 */
+  --BTN_RADIUS: 40px;
+  --THUMB_RADIUS: clamp(20px,6vw,60px);
+
+  /* 文字サイズ */
+  --FONT_SIZE_TITLE: clamp(32px,4.8vw,48px);
+  --FONT_SIZE_L: clamp(22px,3vw,30px);
+  --FONT_SIZE_M: clamp(16px,2.2vw,22px);
+  --FONT_SIZE_S: clamp(14px,1.6vw,16px);
+  --FONT_SIZE_XS: clamp(12px,1.4vw,14px);
+  --FONT_SIZE_XXS: 12px;
+
+  /* 幅 */
+  --SP_WIDTH:375px;
+
+  /* 余白調整 */
+  --SECTION_PADDING:30px;
+  --PUBLIC_MARGIN:40px;
+}

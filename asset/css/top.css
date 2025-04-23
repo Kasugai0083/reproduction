@@ -1,0 +1,93 @@
+/* -------------------- top-sec ------------------- */
+.top-sec {
+  background: url(../images/top/kinpaku_wall.png) no-repeat top left/80%, url(../images/top/top_wall.jpg) repeat center/11%;
+}
+
+.top-intro {
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.top-intro .top-intro__logo {
+  width: 26.962962963%;
+}
+.top-intro .top-intro__traveler {
+  position: relative;
+  width: 35.5555555556%;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.top-intro .top-intro__traveler .point {
+  position: relative;
+  z-index: 1;
+}
+.top-intro .top-intro__traveler .cloud-a {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 193.3333333333%;
+  max-width: none;
+}
+
+.top-ttl {
+  margin-bottom: 4rem;
+  width: 90%;
+  margin-inline: auto;
+}
+.top-ttl .top-ttl__main {
+  position: relative;
+  z-index: 1;
+}
+.top-ttl .top-ttl__campain {
+  position: relative;
+  width: 63.3986928105%;
+  margin-inline: auto;
+}
+.top-ttl .top-ttl__campain .point {
+  position: relative;
+  z-index: 1;
+}
+.top-ttl .top-ttl__campain .cloud-b {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 84.3195266272%;
+  max-width: none;
+}
+
+.top-chosen {
+  justify-content: space-between;
+  align-items: end;
+  gap: 2em;
+  font-weight: 900;
+}
+.top-chosen__traveler {
+  width: 20%;
+  max-width: 44px;
+  margin-left: 1em;
+}
+.top-chosen__message {
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+.top-chosen__message #name {
+  font-size: 24px;
+}
+
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- */
+/* -------------------- ------------------- *//*# sourceMappingURL=top.css.map */

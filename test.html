@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>自動スクラッチアニメ（透明マスク）</title>
+  <style>
+    body {
+      margin: 0;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .scratch-container {
+      position: relative;
+      width: 300px;
+    }
+    .scratch-container img {
+      width: 100%;
+      display: block;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="scratch-container">
+    <img src="asset/images/top/traveler_a.svg" id="image" alt="スクラッチ対象">
+    <canvas id="scratchCanvas"></canvas>
+  </div>
+
+  <script>
+    const img = document.getElementById("image");
+    const canvas = document.getElementById("scratchCanvas");
+    const ctx = canvas.getContext("2d");
+
+    img.onload = () => {
+      canvas.width = img.clientWidth;
+      canvas.height = img.clientHeight;
+
+      // 🔒 マスク（画像を覆う不透明な色 — 黒や白など）
+      ctx.fillStyle = "#fff"; // 透明マスク感を出したい場合は "#fff" もOK
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // ✂️ 削って見せる処理
+      let x = 0, y = 0;
+      const step = 10;
+
+      const interval = setInterval(() => {
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.beginPath();
+        ctx.arc(x, y, 20, 0, Math.PI * 2);
+        ctx.fill();
+
+        x += step;
+        if (x > canvas.width) {
+          x = 0;
+          y += step;
+        }
+        if (y > canvas.height) {
+          clearInterval(interval);
+        }
+      }, 30);
+    };
+  </script>
+</body>
+</html>

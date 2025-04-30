@@ -129,7 +129,111 @@ $base-width:375px * 0.9;
     }
 }
 
-/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- goshuin-sec ------------------- */
+.goshuin-sec {
+    background: url(../images/new_top/wall_brown.jpg) repeat;
+}
+
+.goshuin-ttl {
+    margin-bottom: 8px;
+}
+
+.goshuin-stamp {
+    $stamp_height: 605px;
+    $stamp_width: 343px;
+  
+    position: relative;
+  
+    &__area {
+        position: relative;
+        z-index: 1;
+    }
+  
+    @mixin absolute_pos_right($top, $right, $width) {
+      position: absolute;
+      top: #{$top / $stamp_height * 100%};
+      right: #{$right / $stamp_width * 100%};
+      width: #{$width / $stamp_width * 100%};
+    }
+  
+    @mixin absolute_pos_left($top, $left, $width) {
+      position: absolute;
+      top: #{$top / $stamp_height * 100%};
+      left: #{$left / $stamp_width * 100%};
+      width: #{$width / $stamp_width * 100%};
+    }
+  
+    &__traveler__a {
+        z-index: 1;
+        @include absolute_pos_right(160px, 24px, 51px);
+    }
+  
+    &__traveler__b {
+        z-index: 1;
+        @include absolute_pos_left(296px, 8px, 44px);
+    }
+  
+    &__cloud__a {
+        @include absolute_pos_left(106px, -40px, 224px)
+    }
+
+    &__cloud__b {
+        @include absolute_pos_right(193px, -30px, 224px);
+    }
+    &__cloud__c {
+        @include absolute_pos_left(348px, -30px, 224px)
+    }
+    &__cloud__d {position: absolute;}
+  }
+
+
+
+
+
+
+
+.goshuin-stamp__ship {
+}
+
+.goshuin-stamp__ship__main {
+}
+
+.goshuin-stamp__ship__cloud {
+}
+
+.goshuin-btn {
+}
+
+.goshuin-btn__message {
+}
+
+.g-caption {
+}
+
+.ja {
+}
+
+.en {
+}
+
+.goshuin-btn__main {
+}
+
+.g-btn__main {
+}
+
+.__brown {
+}
+
+.goshuin-btn__car {
+}
+
+.goshuin-btn__car__main {
+}
+
+.goshuin-btn__car__cloud {
+}
+
 
 @media screen and (min-width: 768px){
   
@@ -137,7 +241,7 @@ $base-width:375px * 0.9;
 @media screen and (max-width: 767px){
   
 }
-/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- bnr-sec ------------------- */
 
 @media screen and (min-width: 768px){
   
@@ -145,7 +249,7 @@ $base-width:375px * 0.9;
 @media screen and (max-width: 767px){
   
 }
-/* -------------------- top-xxxx__section ------------------- */
+/* -------------------- footerarea ------------------- */
 
 @media screen and (min-width: 768px){
   
@@ -153,67 +257,3 @@ $base-width:375px * 0.9;
 @media screen and (max-width: 767px){
   
 }
-/* -------------------- top-xxxx__section ------------------- */
-
-@media screen and (min-width: 768px){
-  
-}
-@media screen and (max-width: 767px){
-  
-}
-/* -------------------- top-xxxx__section ------------------- */
-
-@media screen and (min-width: 768px){
-  
-}
-@media screen and (max-width: 767px){
-  
-}
-/* -------------------- top-xxxx__section ------------------- */
-
-@media screen and (min-width: 768px){
-  
-}
-@media screen and (max-width: 767px){
-  
-}
-/* -------------------- top-xxxx__section ------------------- */
-
-@media screen and (min-width: 768px){
-  
-}
-@media screen and (max-width: 767px){
-  
-}
-/* -------------------- top-xxxx__section ------------------- */
-
-@media screen and (min-width: 768px){
-  
-}
-@media screen and (max-width: 767px){
-  
-}
-/* -------------------- top-xxxx__section ------------------- */
-
-@media screen and (min-width: 768px){
-  
-}
-@media screen and (max-width: 767px){
-  
-}
-/* -------------------- top-xxxx__section ------------------- */
-
-@media screen and (min-width: 768px){
-  
-}
-@media screen and (max-width: 767px){
-  
-}
-
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-

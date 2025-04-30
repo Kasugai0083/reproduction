@@ -1,3 +1,4 @@
 {
-  "liveServer.settings.port": 5511
+  "liveServer.settings.port": 5511,
+  "vs-html-to-css.append": " {\n}\n\n"
 }

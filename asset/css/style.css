@@ -275,6 +275,7 @@ a:hover .hvr-img img{
 }
 
 /**** セクション汎用クラス ****/
+#footerarea,
 .g-sec{
 	padding-top: var(--pdt,var(--SECTION_PADDING));
 	padding-bottom: var(--pdb,var(--SECTION_PADDING));
@@ -283,7 +284,7 @@ a:hover .hvr-img img{
 /**** ラッパー汎用クラス ****/
 .g-wrapper{
 	max-width: var(--wrapper_max_width,1000px);
-	width: var(--wrapper_width,90%);
+	width: var(--wrapper_width,92%);
 	margin-inline:auto;
 }
 

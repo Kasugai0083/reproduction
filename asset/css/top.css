@@ -109,19 +109,57 @@
   font-size: 24px;
 }
 
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- top-xxxx__section ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- */
-/* -------------------- ------------------- *//*# sourceMappingURL=top.css.map */
+/* -------------------- goshuin-sec ------------------- */
+.goshuin-sec {
+  background: url(../images/new_top/wall_brown.jpg) repeat;
+}
+
+.goshuin-ttl {
+  margin-bottom: 8px;
+}
+
+.goshuin-stamp {
+  position: relative;
+}
+.goshuin-stamp__area {
+  position: relative;
+  z-index: 1;
+}
+.goshuin-stamp__traveler__a {
+  z-index: 1;
+  position: absolute;
+  top: 26.4462809917%;
+  right: 6.9970845481%;
+  width: 14.8688046647%;
+}
+.goshuin-stamp__traveler__b {
+  z-index: 1;
+  position: absolute;
+  top: 48.9256198347%;
+  left: 2.332361516%;
+  width: 12.8279883382%;
+}
+.goshuin-stamp__cloud__a {
+  position: absolute;
+  top: 17.520661157%;
+  left: -11.6618075802%;
+  width: 65.306122449%;
+}
+.goshuin-stamp__cloud__b {
+  position: absolute;
+  top: 31.9008264463%;
+  right: -8.7463556851%;
+  width: 65.306122449%;
+}
+.goshuin-stamp__cloud__c {
+  position: absolute;
+  top: 57.520661157%;
+  left: -8.7463556851%;
+  width: 65.306122449%;
+}
+.goshuin-stamp__cloud__d {
+  position: absolute;
+}
+
+/* -------------------- bnr-sec ------------------- */
+/* -------------------- footerarea ------------------- *//*# sourceMappingURL=top.css.map */
